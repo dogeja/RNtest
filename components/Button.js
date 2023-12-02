@@ -21,7 +21,13 @@ export default function Button({ theme, label }) {
             color="#25292e"
             style={styles.buttonIcon}
           />
-          <Text style={[styles.buttonLabel, { color: "#25292e" }]}>
+          <Text
+            style={[
+              styles.buttonLabel,
+              { color: "#25292e" },
+              { marginHorizontal: 4 },
+            ]}
+          >
             {label}
           </Text>
         </Pressable>
