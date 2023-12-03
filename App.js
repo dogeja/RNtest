@@ -2,24 +2,36 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 import ImageViewer from "./components/ImageViewer";
 import Button from "./components/Button";
+import Timer from "./components/Timer";
 
 const placeHolderImg = require("./assets/images/background-image.png");
 
 export default function App() {
+  if (dailyMissionPassed) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <ImageViewer placeHolderImgSource={placeHolderImg} />
+        </View>
+        <View style={styles.footerContanier}>
+          <Button theme="primary" label={"CHOOSE A PHOTO"} />
+          <Button label={"USE THIS PHOTO"} />
+        </View>
+        <StatusBar style="auto" />
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer placeHolderImgSource={placeHolderImg} />
       </View>
-      <View style={styles.footerContanier}>
-        <Button theme="primary" label={"CHOOSE A PHOTO"} />
-        <Button label={"USE THIS PHOTO"} />
-      </View>
+      <Timer></Timer>
       <StatusBar style="auto" />
     </View>
   );
 }
-
+const dailyMissionPassed = false;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
