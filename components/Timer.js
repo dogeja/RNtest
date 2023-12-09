@@ -1,9 +1,9 @@
 import { StyleSheet, View, Text } from "react-native";
-export default function Timer({}) {
+export default function Timer({ leftTime }) {
   return (
     <View style={styles.timerContainer}>
       <Text style={styles.timerText}>남은 시간</Text>
-      <Text style={[styles.timerText, { fontSize: 48 }]}>03:24</Text>
+      <Text style={[styles.timerText, { fontSize: 48 }]}>{leftTime}</Text>
     </View>
   );
 }
